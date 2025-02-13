@@ -1,0 +1,26 @@
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-v18-cyrillic_latin-regular.woff2") format("woff2");
+}
+
+.cert-card.selected {
+    border: 2px solid #15b318;
+    background-color: rgba(0, 255, 128, 0.05);
+}
+
+
+.ms-form-group-inline input[type=file] {
+    height: auto;
+}
+
+.ms-tab ul li a {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.switch-theme {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}

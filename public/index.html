@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <script src= "https://cryptopro.ru/sites/default/files/products/cades/cadesplugin_api.js"></script> -->
+    <script src="./js/cadesplugin_api.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/dayjs.min.js"></script>
+    <script src="./js/dark.min.js"></script>
+    <script src="./js/main.js"></script>
+
+    <link rel="stylesheet" href="./css/minstyle.io.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <title>Подписать или проверить</title>
+  </head>
+  <body>
+    <div class="container ms-mt-1">
+
+      <div class="row ms-mb-2">
+
+        <div class="ms-tab ms-fullwidth ">
+          <ul>
+            <li>
+              <a class="tab-sign ms-active" href="#">Подписать</a>
+            </li>
+            <li>
+              <a class="tab-check" href="#">Проверить</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-sign-contents">
+
+        <div class="certs row">
+          <div class="col">
+            <div class="ms-loading ms-medium"></div>
+          </div>
+        </div>
+
+        <div class="row ms-mt-1">
+          <div class="col">
+            <div class="ms-form-group-inline">
+              <input type="file" class="sign-file" id="sign-file" />
+              <select class="sign-format">
+                <option value="" disabled>Формат</option>
+                <option value="sig" selected>sig (base64)</option>
+                <option value="p7s">p7s (двоичный)</option>
+              </select>
+              <button class="ms-btn ms-ml-1 ms-primary ms-outline sign" disabled>Подписать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-check-contents ms-display-none">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col-sm">
+                <div class="ms-form-group">
+                  <label for="verify-file">📝 Подписываемый файл</label>
+                  <input type="file" class="verify-file" id="verify-file" />
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="ms-form-group">
+                  <label for="verify-sign-file">◾ Файл подписи (sig/p7s)</label>
+                  <input type="file" accept=".p7s,.sig" class="verify-sign-file" id="verify-sign-file" />
+                </div>
+              </div>
+              <div class="col-sm">
+                <button class="ms-btn ms-primary ms-outline verify-sign">Проверить подпись</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="ms-loading ms-medium ms-display-none"></div>
+        </div>
+
+        <div class="row">
+          <div class="ms-alert ms-display-none check-result">
+            <p class="check-result-message"></p>
+          </div>
+        </div>
+
+        <div class="signer-certs row"></div>
+      </div>
+    </div>
+  </body>
+</html>
